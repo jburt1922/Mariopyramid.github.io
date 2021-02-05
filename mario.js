@@ -1,42 +1,40 @@
-
 printPyramid(5);
-
-
-let space = " ";
-let brick = "#";
-let layer1 = space+space+space+space+space+space+brick+brick
-let layer2 = space+space+space+space+space+brick+brick+brick
-let layer3 = space+space+space+space+brick+brick+brick+brick
-let layer4 = space+space+space+brick+brick+brick+brick+brick
-let layer5 = space+space+brick+brick+brick+brick+brick+brick
-let layer6 = space+brick+brick+brick+brick+brick+brick+brick
-let layer7 = brick+brick+brick+brick+brick+brick+brick+brick
-
-let rows = 3
-//start by declaring an empty string outside the loop
-let str = '';
-
-//you will need to use a for loop nested inside another for loop.
-for(let i=0; i<rows; i++){  //outer loop
-  str = "";
-  for(let j=0; j<rows+1; j++){//inner loop
-
-    str += "#"; //this adds a # to the end of the string.
-
-  }
-
-}
-console.log("Where is Mario? Peach is in need of some assitance!"+"\n")
-  console.log(layer1) //once a row is done we print it out
-  console.log(layer2)
-  console.log(layer3)
-  console.log(layer4)
-  console.log(layer5)
-  console.log(layer6)
-  console.log(layer7)
+/* 
+ * printPyramid
+ *
+ * Prints to the console a pyramid of '#' characters of the specified height
+ * For example, if height is 5, the console will look like this:
+ *          ##
+ *         ###
+ *        ####
+ *       #####
+ *      ######
+ */
 function printPyramid(height) {
+      var height = parseInt(prompt("Please enter desired height of tower: "));
+    // height is the number of rows. For each row...
+    for (var row = 0; row < height; row++) {
+        // figure out how many bricks in this row (aka the '#' characters)
+        var numBricks = row + 2;
 
-    // TODO
-    // print that pyramid!
+        // use the information from the user
+        // figure out how many space characters
+        var numSpaces = height - row - 1;
 
+        // build up a string for this row. Starts empty...
+        var rowStr = "";
+
+        // add the spaces
+        for (var i = 0; i < numSpaces; i++) {
+            rowStr += " ";
+        }
+
+        // add the bricks
+        for (var i = 0; i < numBricks; i++) {
+            rowStr += "#";
+        }
+
+        // print the string
+        console.log(rowStr);
+    }
 }
