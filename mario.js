@@ -22,19 +22,29 @@ function printPyramid(height) {
         var numSpaces = height - row - 1;
 
         // build up a string for this row. Starts empty...
-        var rowStr = "";
-
+        var rowStr = ".";
+        
         // add the spaces
         for (var i = 0; i < numSpaces; i++) {
-            rowStr += " ";
+            rowStr += ".";    
         }
 
         // add the bricks
         for (var i = 0; i < numBricks; i++) {
             rowStr += "#";
+        
         }
 
         // print the string
         console.log(rowStr);
+      
+    let para = document.createElement("p");
+      //console.log(rowStr);
+      let node = document.createTextNode(rowStr);
+      //console.log(node);
+      para.appendChild(node);
+      let element = document.getElementById("pyramid");
+      //console.log(document.getElementById("pumpkin"));
+      element.appendChild(para); 
     }
 }
