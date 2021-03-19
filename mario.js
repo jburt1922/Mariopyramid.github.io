@@ -1,4 +1,14 @@
-printPyramid(5);
+
+let button = document.querySelector("#button");
+button.addEventListener("click", () => {
+    determineHeightAndThenDrawPyramid();
+   
+});
+function determineHeightAndThenDrawPyramid(){
+  document.querySelector('#pyramid').innerHTML = "";
+  
+  printPyramid(document.querySelector('#height').value);
+}
 /* 
  * printPyramid
  *
@@ -11,7 +21,6 @@ printPyramid(5);
  *      ######
  */
 function printPyramid(height) {
-      var height = parseInt(prompt("Please enter desired height of tower: "));
     // height is the number of rows. For each row...
     for (var row = 0; row < height; row++) {
         // figure out how many bricks in this row (aka the '#' characters)
@@ -47,4 +56,4 @@ function printPyramid(height) {
       //console.log(document.getElementById("pumpkin"));
       element.appendChild(para); 
     }
-}
+  }
